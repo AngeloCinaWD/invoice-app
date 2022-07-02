@@ -232,6 +232,14 @@ export default {
       invoiceTotal: 0,
     };
   },
+  created() {
+    this.invoiceDateUnix = Date.now();
+    this.invoiceDate = new Date(this.invoiceDateUnix).toLocaleDateString(
+      'it-IT',
+      this.dateOptions
+    );
+    console.log(this.invoiceDate);
+  },
   methods: {
     ...mapMutations(['TOGGLE_INVOICE']),
     closeInvoice() {
