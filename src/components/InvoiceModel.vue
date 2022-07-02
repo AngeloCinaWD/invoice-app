@@ -238,12 +238,22 @@ export default {
       'it-IT',
       this.dateOptions
     );
-    console.log(this.invoiceDate);
   },
   methods: {
     ...mapMutations(['TOGGLE_INVOICE']),
     closeInvoice() {
       this.TOGGLE_INVOICE();
+    },
+  },
+  watch: {
+    paymentTerms() {
+      const futureDate = new Date();
+      this.paymentDueDateUnix = futureDate.setDate(
+        futureDate.getDate() + parseInt(this.paymentTerms)
+      );
+      this.paymentDueDate = new Date(
+        this.paymentDueDateUnix
+      ).toLocaleDateString('it-IT', this.dateOptions);
     },
   },
 };
