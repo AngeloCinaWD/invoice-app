@@ -3,7 +3,9 @@
     <div v-if="!mobile" class="app flex flex-column">
       <navigation></navigation>
       <div class="app-content flex flex-column">
-        <invoice-model v-if="invoiceModal"></invoice-model>
+        <transition name="invoice">
+          <invoice-model v-if="invoiceModal"></invoice-model>
+        </transition>
         <router-view />
       </div>
     </div>
