@@ -206,8 +206,10 @@ import db from '../firebase/init';
 import { mapMutations } from 'vuex';
 import { uid } from 'uid';
 import { doc, setDoc } from '@firebase/firestore';
+import Loading from './Loading.vue';
 export default {
   name: 'invoiceModal',
+  components: { Loading },
   data() {
     return {
       dateOptions: { year: 'numeric', month: 'short', day: 'numeric' },
@@ -279,6 +281,8 @@ export default {
         return;
       }
 
+      this.loading = true;
+
       this.calculateInvoiceTotal();
 
       const invoice = {
@@ -307,6 +311,8 @@ export default {
       };
 
       await setDoc(doc(db, 'invoices', invoice.invoiceId), invoice);
+
+      this.loading = null;
 
       this.TOGGLE_INVOICE();
     },
