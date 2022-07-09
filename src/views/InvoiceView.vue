@@ -143,11 +143,11 @@ export default {
       await this.DELETE_INVOICE(docId);
       this.$router.replace({ name: 'Home' });
     },
-    updateStatusToPaid(docId) {
-      this.UPDATE_STATUS_TO_PAID(docId);
+    async updateStatusToPaid(docId) {
+      await this.UPDATE_STATUS_TO_PAID(docId);
     },
-    updateStatusToPending(docId) {
-      this.UPDATE_STATUS_TO_PENDING(docId);
+    async updateStatusToPending(docId) {
+      await this.UPDATE_STATUS_TO_PENDING(docId);
     },
   },
   computed: {
