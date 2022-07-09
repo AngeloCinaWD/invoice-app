@@ -141,7 +141,7 @@ export default {
     },
     async deleteInvoice(docId) {
       await this.DELETE_INVOICE(docId);
-      this.$router.push({ name: 'Home' });
+      this.$router.replace({ name: 'Home' });
     },
     updateStatusToPaid(docId) {
       this.UPDATE_STATUS_TO_PAID(docId);
