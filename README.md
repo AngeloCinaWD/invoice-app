@@ -1,24 +1,23 @@
 # invoice-app
 
+With this simple app you can create, edit, delete an invoice. For each invoice is possible assign a status (draft, pending, paid) and filter by this.
+
 ## Project setup
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Initialize Firebase and add SDKs for Firebase products.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Create a firebase dir in src with inside a file init.js.
 
-### Lints and fixes files
-```
-npm run lint
-```
+Configure this file with your object firebaseConfig:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<div style="text-align: center">
+
+![immagine](readme_img/init.js.jpg)
+
+</div>
+
+To test app you can visit: https://invoice-app-vue3-93dd0.web.app/
